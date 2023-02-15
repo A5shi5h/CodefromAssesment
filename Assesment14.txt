@@ -1,0 +1,156 @@
+
+ans1. import java.util.InputMismatchException;
+		import java.util.Scanner;
+
+		public class ques1 {
+
+			public static void sum(int a , int b)
+			{
+				int c = a + b;
+				System.out.println(c);
+			}
+			public static void main(String[] args) {
+				
+				Scanner sc = new Scanner(System.in);
+				System.out.println("Enter a number :");
+				int x = sc.nextInt();
+				System.out.println("Enter a number to add :");
+				int y = sc.nextInt();
+				try
+				{
+				   sum(x,y);
+				}
+				catch(InputMismatchException e)
+				{
+					e.printStackTrace();
+				}
+
+			}
+
+		}
+
+ans2.   import java.io.IOException;
+		import java.util.IllegalFormatException;
+		import java.util.InputMismatchException;
+		import java.util.Scanner;
+
+		public class ques2 {
+
+			public static void main(String[] args) {
+				int arr[] = {1,2,3,4,5};
+				Scanner sc= new Scanner(System.in);
+				try
+				{
+					System.out.println("Enter the index you want to fetch element from : ");
+					int ind = sc.nextInt();
+					System.out.println(arr[ind]);
+				}
+				catch(ArrayIndexOutOfBoundsException e)
+				{
+					e.printStackTrace();
+					System.out.println("enter a valid index value ");
+				}
+				catch(InputMismatchException e)
+				{
+					e.printStackTrace();
+					System.out.println("Enter an integer");
+				}
+				catch(Exception e)
+				{
+					e.printStackTrace();
+				}
+			}
+		}
+		
+ans3. import java.io.FileReader;
+		import java.io.IOException;
+
+		public class ques3 {
+
+			public static void main(String[] args)  {
+			String str = "";
+				System.out.println(str.length());
+
+
+			}
+
+		}        // checked exception
+		
+		import java.io.FileReader;
+		import java.io.IOException;
+
+		public class ques3 {
+
+			public static void main(String[] args) throws RuntimeException {
+				int num = 10;
+				int num2 = 0;
+				int div = num / num2;
+				System.out.println(div);
+
+
+			}
+
+		}       //unchecked exception
+
+       for unchecked exception we have to throw an exception
+	   but for checked exception we do not have to throw an exception.
+		
+		
+
+ans4. import java.util.Scanner;
+
+		public class rethrowing {
+
+			public static void main(String[] args) {
+				int arr[] = {1,2,3,4,5,6};
+				
+				Scanner sc = new Scanner(System.in);
+				System.out.println("Enter the element index you want to add eleement on :");
+				int ind = sc.nextInt();
+				System.out.println("Enter the element to add : ");
+				int element = sc.nextInt();
+				
+				try
+				{
+					arr[ind] = element; 
+				}
+				catch(Exception e)
+				{
+					throw e;
+				}
+			}
+		}
+		
+ans5.package assesment14;
+
+		import java.util.Scanner;
+
+		public class ques5 {
+
+			public static void check(int x , int y) 
+			{
+				if(y== 0)
+				{
+					throw new ArithmeticException("y is zero");
+				}
+				else if(x >= -2147483648 && x <= 2147483647 && y >= -2147483648 && y <= 2147483647)
+				{
+					System.out.println(x/y);
+				}
+				else
+				{
+					throw new ArithmeticException("not a signed integer");
+				}
+			}
+			public static void main(String[] args) {
+				 
+					Scanner sc = new Scanner(System.in);
+					System.out.println("Enter a number : ");
+					int a = sc.nextInt();
+					System.out.println("Enter a number : ");
+					int b = sc.nextInt();
+					check(a,b);
+				
+			}
+
+		}
